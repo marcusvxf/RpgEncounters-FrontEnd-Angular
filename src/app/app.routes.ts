@@ -4,17 +4,17 @@ import { EncountersComponent } from './pages/encounters/encounters.component';
 import { CreaturesComponent } from './pages/creatures/creatures.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: '/home',
+    path: 'home',
     component: HomeComponent,
   },
   {
-    path: 'Encounters',
+    path: 'encounters',
     component: EncountersComponent,
   },
   {
-    path: 'Creatures',
+    path: 'creatures',
     component: CreaturesComponent,
   },
 ];

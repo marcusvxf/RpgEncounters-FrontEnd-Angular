@@ -8,9 +8,9 @@ import { environment } from '../../../environment/environment';
   providedIn: 'root',
 })
 export class CreatureService {
-  constructor(public http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  private base_url = environment.api_url + '/creatures';
+  private base_url = environment.api_url + '/creature';
 
   public get(id: number): Observable<ICreature> {
     const formated_url = this.base_url;
