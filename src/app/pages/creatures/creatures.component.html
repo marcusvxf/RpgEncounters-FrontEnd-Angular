@@ -1,1 +1,52 @@
-<p>creatures works!</p>
+<div class="mt-8 px-8">
+  <div>
+    <h2 class="text-5xl font-bold">Criaturas</h2>
+    <button class="mt-4 bg-secondary text-white rounded-lg p-2 hover:bg-third">
+      Criar Criatura +
+    </button>
+  </div>
+  <div class="w-full flex items-center justify-center">
+    <div class="flex flex-col gap-4 mt-8 w-[70vw]">
+      <div class="flex rounded-t-lg overflow-hidden">
+        <div class="text-center text-xl py-1 text-white flex-1 bg-[gray]">
+          Nome
+        </div>
+        <div class="text-center text-xl py-1 text-white flex-1 bg-[gray]">
+          Desafio
+        </div>
+        <div class="text-center text-xl py-1 text-white flex-1 bg-[gray]">
+          Pontos de vida
+        </div>
+        <div class="text-center text-xl py-1 text-white flex-1 bg-[gray]">
+          Armadura
+        </div>
+      </div>
+      @for (item of creatures; track $index) {
+      <div class="flex">
+        <div
+          class="flex-1 uppercase text-third font-semibold text-center text-xl whitespace-nowrap max-w"
+        >
+          {{ item.name }}
+        </div>
+        <div class="flex-1 text-center text-xl">
+          {{ item.challenger_level }} (n XP)
+        </div>
+        <div class="flex-1 text-center text-xl">
+          {{
+            calc_default_hit_points(
+              item.life_points_dice_type,
+              item.life_points_dice_qtd,
+              item.life_points_dice_bonus
+            )
+          }}
+          ({{ item.life_points_dice_qtd }}d{{ item.life_points_dice_type }} +
+          {{ item.life_points_dice_bonus }})
+        </div>
+        <div class="flex-1 text-center text-xl">
+          {{ item.armor_class || 0 }}
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

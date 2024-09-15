@@ -22,4 +22,12 @@ export class CreaturesComponent {
       console.log(el);
     });
   }
+
+  calc_default_hit_points(
+    dice_type: number,
+    dice_qtd: number,
+    dice_bonus: number
+  ) {
+    return dice_qtd * (dice_type / 2 + 0.5) + dice_bonus;
+  }
 }

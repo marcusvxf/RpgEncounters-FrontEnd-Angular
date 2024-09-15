@@ -3,10 +3,11 @@ export interface ICreature {
   name: string;
   description: string;
   challenger_level: number;
+  armor_class: number;
   hit_points: string;
-  life_points_dice_qtd: string;
-  life_points_dice_type: string;
-  life_points_dice_bonus: string;
+  life_points_dice_qtd: number;
+  life_points_dice_type: number;
+  life_points_dice_bonus: number;
   is_active: boolean;
   encounter_id: string;
   attacks: ICreatureAttack[];
