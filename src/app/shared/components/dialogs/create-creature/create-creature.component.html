@@ -1,0 +1,251 @@
+<div class="p-8">
+  <form [formGroup]="creature_form" class="text-lg flex flex-col gap-8">
+    <div class="flex flex-wrap justify-between gap-y-8">
+      <div>
+        <label for="creature-name">Nome da Criatura: </label>
+        <input id="creature-name" type="text" formControlName="name" />
+      </div>
+      <div>
+        <label for="challenger">Desafio: </label>
+        <input
+          class="w-16"
+          id="challenger"
+          type="number"
+          formControlName="challenger_level"
+        />
+      </div>
+      <div>
+        <label for="armor">Armadura: </label>
+        <input
+          class="!w-8"
+          id="armor"
+          type="number"
+          formControlName="armor_class"
+        />
+      </div>
+      <div>
+        <label for="armor">Velocidade: </label>
+        <input
+          class="!w-8"
+          id="armor"
+          type="number"
+          formControlName="armor_class"
+        />
+      </div>
+      <div>
+        <label for="hit_points">Pontos de vida: </label>
+        <input
+          class="w-16"
+          placeholder="0"
+          id="hit_points"
+          type="number"
+          formControlName="hit_points"
+        />
+        (
+        <input
+          class="w-12"
+          placeholder="0"
+          id="dice_qtd"
+          type="number"
+          formControlName="life_points_dice_qtd"
+        />
+        d
+        <input
+          class="w-8"
+          placeholder="0"
+          type="number"
+          formControlName="life_points_dice_type"
+        />
+        +
+        <input
+          class="w-16"
+          placeholder="0"
+          type="number"
+          formControlName="life_points_dice_bonus"
+        />)
+      </div>
+    </div>
+
+    <div class="flex gap-8">
+      <div>
+        <label for="description">Descrição: </label>
+        <textarea
+          id="description"
+          type="text"
+          formControlName="description"
+        ></textarea>
+      </div>
+    </div>
+    <div class="flex gap-8">
+      <div class="flex flex-col">
+        <h4>For</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="strength"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <h4>Des</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="dexterity"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <h4>Int</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="intelligence"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <h4>Sab</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="wisdom"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <h4>Con</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="constitution"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <h4>Car</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="charisma"
+        />
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <label for="immunities">Imunidades: </label>
+      <input
+        id="immunities"
+        class="w-[70vw]"
+        type="text"
+        formControlName="immunities"
+      />
+    </div>
+
+    <div class="flex gap-4">
+      <label for="languages">Linguas: </label>
+      <input
+        id="languages"
+        class="w-[70vw]"
+        type="text"
+        formControlName="languages"
+      />
+    </div>
+
+    <div class="flex gap-8">
+      <h3>Saving throws:</h3>
+      <div class="flex">
+        <h4>For +</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="st_strength"
+        />
+      </div>
+
+      <div class="flex">
+        <h4>Des +</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="st_dexterity"
+        />
+      </div>
+
+      <div class="flex">
+        <h4>Int +</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="st_intelligence"
+        />
+      </div>
+
+      <div class="flex">
+        <h4>Sab +</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="st_wisdom"
+        />
+      </div>
+
+      <div class="flex">
+        <h4>Con +</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="st_constitution"
+        />
+      </div>
+
+      <div class="flex">
+        <h4>Car +</h4>
+        <input
+          class="!w-8"
+          placeholder="0"
+          type="number"
+          formControlName="st_charisma"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <h4>Senses:</h4>
+      <div class="ml-4">
+        <div class="flex gap-2">
+          <h5>Visão do escuro:</h5>
+          <input
+            class="!w-8"
+            placeholder="0"
+            type="number"
+            formControlName="dark_vision"
+          />
+          m
+        </div>
+        <div class="flex gap-2">
+          <h5>Percepção passiva:</h5>
+          <input
+            class="!w-8"
+            placeholder="0"
+            type="number"
+            formControlName="passive_perspective"
+          />
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4>Ataques:</h4>
+    </div>
+  </form>
+</div>

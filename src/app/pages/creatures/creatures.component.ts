@@ -1,19 +1,44 @@
 import { Component } from '@angular/core';
 import { CreatureService } from '../../core/services/creature.service';
 import { ICreature } from '../../shared/interfaces/creature.interface';
+import {
+  MatDialog,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { CreateCreatureComponent } from '../../shared/components/dialogs/create-creature/create-creature.component';
 
 @Component({
   selector: 'app-creatures',
   standalone: true,
-  imports: [],
+  imports: [MatDialogModule],
   templateUrl: './creatures.component.html',
   styleUrl: './creatures.component.scss',
 })
 export class CreaturesComponent {
   public creatures: ICreature[] = [];
+  private page: number = 1;
 
-  constructor(private creature_service: CreatureService) {
+  dialog_ref!: MatDialogRef<CreateCreatureComponent>;
+
+  constructor(
+    private creature_service: CreatureService,
+    readonly dialog: MatDialog
+  ) {
     this.get_all_creatures();
+  }
+
+  open_create_creature_dialog() {
+    this.dialog_ref = this.dialog.open(CreateCreatureComponent, {
+      height: '80vh',
+      width: '60vw',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    });
+
+    this.dialog_ref.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   get_all_creatures() {
